@@ -1,0 +1,12 @@
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector
+    volumes:
+      - ./otel-collector-config.yaml:etc/otelcol/config.yml
+    ports:
+      - 4317:4317
+      - 4318:4318
+  ui:
+    build: ./ui/Dockerfile
+  api:
+    build: ./ui/Dockerfile
